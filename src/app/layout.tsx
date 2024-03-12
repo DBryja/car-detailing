@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Header from "@/app/components/Header"
+import {hkgrotesk, hkgroteskWide} from "@/utils";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +18,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`font-main ${hkgrotesk.variable} ${hkgroteskWide.variable} bg-black w-screen overflow-x-hidden text-beige`}>
+        <Header/>
+        {children}
+      </body>
     </html>
   );
 }

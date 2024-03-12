@@ -7,12 +7,31 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+    colors: {
+      beige :{
+        light: "#FAF3E1",
+        DEFAULT: "#F5E7C6"
       },
+      orange:  "#FF6D1F",
+      gray: {
+        light: "#383737",
+        dark: "#222222"
+      },
+      black: "#010609"
+    },
+    extend: {
+      fontFamily : {
+        main: ["var(--font-main)", "sans-serif"],
+        heading: ["var(--font-heading)", "sans-serif"],
+      },
+      fontSize: {
+        "3xl": "2rem"
+      },
+      backgroundImage: {
+        hero: "url('/hero-mobile.png')",
+        heroTablet: "url('/hero-tablet.png')",
+        heroDesktop: "url('/hero.png')",
+      }
     },
   },
   plugins: [],
