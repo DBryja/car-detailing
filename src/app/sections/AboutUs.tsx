@@ -12,7 +12,7 @@ const paragraphs = [
 
 export default function AboutUs() {
     return (
-        <section className={"relative w-screen overflow-hidden overscroll-x-none md:min-h-[750px]" +
+        <section id="about-us" className={"relative w-screen overflow-hidden overscroll-x-none md:min-h-[750px]" +
             " before:block before:absolute before:w-full before:top-0 before:inset-x-0 before:h-[15vh] before:bg-gradient-to-b before:from-black before:to-transparent before:z-10" +
         " after:block after:absolute after:w-full after:bottom-0 after:inset-x-0 after:h-[15vh] after:bg-gradient-to-t after:from-black after:to-transparent " +
         " md:min-h-[700px] md:flex md:flex-col md:justify-center"}>

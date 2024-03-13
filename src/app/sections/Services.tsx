@@ -1,7 +1,10 @@
+"use client";
 import Button from "@/app/components/Button";
 import Image from "next/image";
-import {ReactNode} from "react";
+import React, {useLayoutEffect} from "react";
 import Link from "next/link";
+import {gsap} from "gsap";
+import {ScrollTrigger} from "gsap/dist/ScrollTrigger";
 
 interface Card {
     title: string;
@@ -39,14 +42,32 @@ const cards: Card[] = [
 ]
 
 export default function Services(){
+    useLayoutEffect((() => {
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.to("#pin", {
+            scrollTrigger: {
+                trigger: "#pinParent",
+                start: "top center",
+                end: "bottom 600px",
+                // markers: true,
+                scrub: 1,
+            },
+            y: 1250,
+            ease: "none"
+        })
+    }), []);
+
     return (
-        <section className={"w-screen h-full overflow-x-hidden overscroll-x-none flex flex-col items-center min-h-screen bg-black px-6 md:px-12 lg:flex-row lg:items-start lg:max-w-screen-xl lg:mx-auto lg:justify-between lg:gap-x-40 xl:px-0"}>
-            <div className={"flex flex-col gap-y-4"}>
-                <h2 className={"uppercase tracking-widest text-center lg:text-left"}>Services</h2>
-                <p className={"text-center font-[200] md:text-2xl md:px-12 md:mb-12 lg:text-left lg:px-0"}>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id es</p>
-                <Button href={"#"} full>CONTACT</Button>
+        <section id="services" className={"w-screen h-full overflow-x-hidden overscroll-x-none flex flex-col items-center min-h-screen bg-black px-6 md:px-12 lg:flex-row lg:items-start lg:max-w-screen-xl lg:mx-auto lg:justify-between lg:gap-x-40 xl:px-0"}>
+            <div  id={"pinParent"} className={" w-[380px] h-[1600px] flex-shrink-0 relative"} >
+                <span className={"text-xs"}>temporary solution</span>
+                <div className={"flex flex-col gap-y-4 w-full top-0 translate-y-0"} id={"pin"}>
+                    <h2 className={"uppercase tracking-widest text-center lg:text-left"}>Services</h2>
+                    <p className={"text-center font-[200] md:text-2xl md:px-12 md:mb-12 lg:text-left lg:px-0"}>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id es</p>
+                    <Button full href={"#contact"}>CONTACT</Button>
+                </div>
             </div>
-            <div className={"flex flex-col mt-12 gap-y-12 md:gap-y-24 lg:mt-0"}>
+            <div className={"flex flex-col mt-12 gap-y-12 md:gap-y-24 lg:mt-0 overflow-hidden"}>
             {cards.map((card, index) => (<ServiceCard key={index} card={card} />))}
             </div>
         </section>

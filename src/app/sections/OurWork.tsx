@@ -71,7 +71,7 @@ const contents = [
 export default function OurWork(){
     const [currentSlide, setCurrentSlide] = useState(0);
     return (
-    <section className={"w-full bg-black flex flex-col  items-center justify-between max-w-screen-xl lg:mx-auto"}>
+    <section id={"our-work"} className={"w-full bg-black flex flex-col  items-center justify-between max-w-screen-xl lg:mx-auto"}>
         <div className={"flex flex-col w-full px-6 min-h-52 md:min-h-60 lg:flex-row"}>
             <div className={"lg:flex-shrink-0 lg:pr-24"}>
                 <h1>OUR WORK</h1>

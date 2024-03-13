@@ -2,6 +2,7 @@
 import {useState, useRef, useEffect} from "react";
 import {FaWrench, FaCamera} from "react-icons/fa";
 import { FaPeopleGroup } from "react-icons/fa6";
+import Link from "next/link";
 
 export default function Burger() {
     const [open, setOpen] = useState(false);
@@ -35,9 +36,9 @@ export default function Burger() {
             </div>
         </button>
             <nav ref={navRef} className={`max-sm:flex md:hidden absolute z-10 right-0 top-0 h-min rounded-b-3xl w-full ${open && "translate-y-0 shadow-lg drop-shadow-xl" || "-translate-y-full"} flex-col px-8 py-12 w-3/4 transform transition-transform duration-300 overflow-x-hidden text-3xl  text-right gap-y-8 bg-black`}>
-                <span className={"flex hover-orange justify-between items-center gap-x-2 mt-4"}>Services<FaWrench/></span>
-                <span className={"flex hover-orange justify-between items-center gap-x-2"}>Demos<FaCamera/></span>
-                <span className={"flex hover-orange justify-between items-center gap-x-2"}>About Us<FaPeopleGroup/></span>
+                <a href="#services" className={"flex hover-orange justify-between items-center gap-x-2 mt-4"}>Services<FaWrench/></a>
+                <a href="#our-work" className={"flex hover-orange justify-between items-center gap-x-2"}>Our Work<FaCamera/></a>
+                <a href="#about-us" className={"flex hover-orange justify-between items-center gap-x-2"}>About Us<FaPeopleGroup/></a>
             </nav>
         </>
     )
