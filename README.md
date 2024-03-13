@@ -1,6 +1,7 @@
 # Car Detailing landing page
 
 Live Solution - [https://bryja-car-detailing.vercel.app/](https://bryja-car-detailing.vercel.app/)
+![Desktop View](/carDetailing.png)
 
 ## Table of contents
 
