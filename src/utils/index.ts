@@ -15,3 +15,15 @@ export const hkgroteskWide = localFont({
         {path: "../../public/fonts/HKGroteskWide-Light.otf", weight: "300"}],
     variable: "--font-heading"
 })
+
+export function debounce<F extends (...args: any[]) => any>(func: F, wait: number) {
+    let timeout: ReturnType<typeof setTimeout> | null;
+    return function executedFunction(...args: Parameters<F>) {
+        const later = () => {
+            clearTimeout(timeout!);
+            func(...args);
+        };
+        if(timeout) clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+};

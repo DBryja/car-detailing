@@ -1,7 +1,7 @@
 import {FiMapPin, FiPhone, } from "react-icons/fi";
 import {FaRegEnvelope, FaRegClock} from "react-icons/fa6";
 
-const items = [
+export const items = [
     {
         icon: <FiMapPin/>,
         text: "196 Charlotte, Nc 92143"

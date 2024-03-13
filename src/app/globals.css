@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 @layer base {
     @font-face {
         font-family: 'HKGroteskWide';
@@ -92,6 +93,19 @@
         transform: scaleX(2);
         transform-origin: bottom left;
     }
+}
+.swiper{
+    position: relative;
+    overflow: hidden;
+}
+.swiper:before, .swiper:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 15vw;
+    height: 100%;
+    top: 0;
+    z-index: 49;
 }
 
 h1 {

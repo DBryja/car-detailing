@@ -3,20 +3,37 @@ import Image from "next/image";
 import {ReactNode} from "react";
 import Link from "next/link";
 
-const cards = [
+interface Card {
+    title: string;
+    img: {
+        src: string;
+        alt: string;
+    };
+    description: string;
+}
+const cards: Card[] = [
     {
         title: "LOREM IPSUM",
-        image: <Image src={"/img1.jpg"} alt={"car in garage"} fill objectFit={"cover"}/>,
+        img: {
+            src: "/img1.jpg",
+            alt: "car in garage"
+        },
         description: "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatu Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatu."
     },
     {
         title: "LOREM IPSUM",
-        image: <Image src={"/img2.jpg"} alt={"polishing"} fill objectFit={"cover"}/>,
+        img: {
+            src: "/img2.jpg",
+            alt: "polishing"
+        },
         description: "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatu Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatu."
     },
     {
         title: "LOREM IPSUM",
-        image: <Image src={"/img6.jpg"} alt={"car interior"} fill objectFit={"cover"}/>,
+        img: {
+            src: "/img3.jpg",
+            alt: "car interior"
+        },
         description: "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatu Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatu."
     },
 ]
@@ -30,25 +47,24 @@ export default function Services(){
                 <Button href={"#"} full>CONTACT</Button>
             </div>
             <div className={"flex flex-col mt-12 gap-y-12 md:gap-y-24 lg:mt-0"}>
-            {cards.map((card, index) => (<ServiceCard key={index} title={card.title} image={card.image}>{card.description}</ServiceCard>))}
+            {cards.map((card, index) => (<ServiceCard key={index} card={card} />))}
             </div>
         </section>
     )
 }
 
-function ServiceCard({title, image, children}:{title:string, image: ReactNode, children:string}){
+function ServiceCard({card}: {card: Card}){
     return (
         <div className={"flex flex-col w-full md:grid md:grid-rows-1 md:grid-cols-[2fr_3fr] md:gap-x-8"}>
             <div className={"w-full aspect-[2/1] md:aspect-[3/5] relative overflow-hidden"}>
-                {image}
+                <Image src={card.img.src} alt={card.img.alt} fill className="object-cover" quality={100} sizes={"(max-width: 500px) 100vw, (max-width: 1000px) 50vw, 33vw"}/>
             </div>
             <div className={"flex flex-col"}>
-                <h3 className={"text-right uppercase mt-2 md:text-left"}>{title}</h3>
-                <p className={"font-thin md:text-2xl md:mt-12"}>{children}</p>
-                <Link className={"relative font-heading md:text-2xl md:mt-auto " +
+                <h3 className={"text-right uppercase mt-2 md:text-left"}>{card.title}</h3>
+                <p className={"font-thin md:text-2xl md:mt-12"}>{card.description}</p>
+                <Link className={"relative font-heading md:text-2xl md:mt-auto hover-orange"
                     // " before:block before:w-1/2 before:scale-x-[0.3] before:origin-left  before:h-0.5 before:bg-orange before:absolute before:left-0 before:bottom-0 " +
-                    " hover-orange "
-                } href={`/services/${title.toLowerCase().replace(" ", "-")}`}>View details</Link>
+                } href={`/services/${card.title.toLowerCase().replace(" ", "-")}`}>View details</Link>
             </div>
         </div>
     )

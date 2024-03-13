@@ -34,7 +34,7 @@ export default function Burger() {
                 </div>
             </div>
         </button>
-            <nav ref={navRef} className={`max-sm:flex md:hidden absolute z-10 right-0 top-0 h-screen ${open && "translate-x-0 shadow-lg drop-shadow-xl" || "translate-x-full"} flex-col px-8 py-12 w-3/4 transform transition-transform overflow-x-hidden text-2xl  text-right gap-y-8 bg-[rgba(0,0,0,0.5)] backdrop-blur-md`}>
+            <nav ref={navRef} className={`max-sm:flex md:hidden absolute z-10 right-0 top-0 h-screen ${open && "translate-x-0 shadow-lg drop-shadow-xl" || "translate-x-full"} flex-col px-8 py-12 w-3/4 transform transition-transform overflow-x-hidden text-2xl  text-right gap-y-8 bg-[rgba(0,0,0,0.5)] backdrop-blur-2xl`}>
                 <span className={"flex justify-end items-center gap-x-2 mt-4"}>Services<FaWrench/></span>
                 <span className={"flex justify-end items-center gap-x-2"}>Demos<FaCamera/></span>
                 <span className={"flex justify-end items-center gap-x-2"}>About Us<FaPeopleGroup/></span>
