@@ -31,7 +31,10 @@ const config: Config = {
         hero: "url('/hero-mobile.png')",
         heroTablet: "url('/hero-tablet.png')",
         heroDesktop: "url('/hero.png')",
-      }
+      },
+      screens: {
+        "lg": "1280px"
+      },
     },
   },
   plugins: [],

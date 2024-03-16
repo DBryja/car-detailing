@@ -43,6 +43,7 @@ const cards: Card[] = [
 
 export default function Services(){
     useLayoutEffect((() => {
+        if (typeof window !== "undefined" && window.innerWidth < 1200) return;
         gsap.registerPlugin(ScrollTrigger);
         gsap.to("#pin", {
             scrollTrigger: {
@@ -59,9 +60,9 @@ export default function Services(){
 
     return (
         <section id="services" className={"w-screen h-full overflow-x-hidden overscroll-x-none flex flex-col items-center min-h-screen bg-black px-6 md:px-12 lg:flex-row lg:items-start lg:max-w-screen-xl lg:mx-auto lg:justify-between lg:gap-x-40 xl:px-0"}>
-            <div  id={"pinParent"} className={" w-[380px] h-[1600px] flex-shrink-0 relative"} >
-                <span className={"text-xs"}>temporary solution</span>
-                <div className={"flex flex-col gap-y-4 w-full top-0 translate-y-0"} id={"pin"}>
+            <div  id={"pinParent"} className={" lg:w-[380px] lg:h-[1600px] lg:flex-shrink-0 lg:relative"} suppressHydrationWarning >
+                <span className={"text-xs hidden lg:inline"} suppressHydrationWarning>temporary solution</span>
+                <div className={"flex flex-col gap-y-4 w-full top-0"} id={"pin"}>
                     <h2 className={"uppercase tracking-widest text-center lg:text-left"}>Services</h2>
                     <p className={"text-center font-[200] md:text-2xl md:px-12 md:mb-12 lg:text-left lg:px-0"}>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id es</p>
                     <Button full href={"#contact"}>CONTACT</Button>
