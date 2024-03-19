@@ -15,7 +15,7 @@ Live Solution - [https://bryja-car-detailing.vercel.app/](https://bryja-car-deta
 
 ### Built with
 
-- CODE:
+- Code:
   - NextJS
   - Typescript
   - TailwindCSS
