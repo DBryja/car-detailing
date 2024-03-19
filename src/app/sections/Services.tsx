@@ -18,7 +18,7 @@ const cards: Card[] = [
     {
         title: "LOREM IPSUM",
         img: {
-            src: "/img1.jpg",
+            src: "/img1.webp",
             alt: "car in garage"
         },
         description: "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatu Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatu."
@@ -26,7 +26,7 @@ const cards: Card[] = [
     {
         title: "LOREM IPSUM",
         img: {
-            src: "/img2.jpg",
+            src: "/img2.webp",
             alt: "polishing"
         },
         description: "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatu Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatu."
@@ -34,7 +34,7 @@ const cards: Card[] = [
     {
         title: "LOREM IPSUM",
         img: {
-            src: "/img3.jpg",
+            src: "/img3.webp",
             alt: "car interior"
         },
         description: "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatu Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatu."
