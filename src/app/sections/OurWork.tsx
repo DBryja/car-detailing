@@ -26,7 +26,7 @@ const contents = [
         title: "Ceramic Coating",
         name: "John S.",
         img: {
-            src: "/slides/slide1.webm",
+            src: "/slides/slide1.webp",
             alt: "audi tt",
         }
     },
@@ -35,7 +35,7 @@ const contents = [
         title: "Paint Protection",
         name: "Paul G.",
         img: {
-            src: "/slides/slide2.webm",
+            src: "/slides/slide2.webp",
             alt: "mazda",
         }
     },
@@ -44,7 +44,7 @@ const contents = [
         title: "Paint Correction",
         name: "Alice B.",
         img: {
-            src: "/slides/slide3.webm",
+            src: "/slides/slide3.webp",
             alt: "alpine",
         }
     },
@@ -53,7 +53,7 @@ const contents = [
         title: "Car Detailing",
         name: "Bob C.",
         img: {
-            src: "/slides/slide4.webm",
+            src: "/slides/slide4.webp",
             alt: "range rover",
         }
     },
@@ -62,7 +62,7 @@ const contents = [
         title: "Waxing & Polishing",
         name: "Charlie D.",
         img: {
-            src: "/slides/slide5.webm",
+            src: "/slides/slide5.webp",
             alt: "porshe",
         }
     }

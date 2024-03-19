@@ -28,9 +28,9 @@ const config: Config = {
         "3xl": "2rem"
       },
       backgroundImage: {
-        hero: "url('/hero-mobile.webm')",
-        heroTablet: "url('/hero-tablet.webm')",
-        heroDesktop: "url('/hero.webm')",
+        hero: "url('/hero-mobile.webp')",
+        heroTablet: "url('/hero-tablet.webp')",
+        heroDesktop: "url('/hero.webp')",
       },
       screens: {
         "lg": "1280px"
