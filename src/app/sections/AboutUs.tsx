@@ -29,7 +29,7 @@ export default function AboutUs() {
             </div>
             <div className={"absolute inset-x-0 -inset-y-5 w-full pointer-events-none "}>
                 <div className={"absolute left-0 top-0 w-full h-full bg-black bg-opacity-80 backdrop-blur-sm"}/>
-                <video className={" w-full h-full object-cover"} autoPlay loop muted preload={"auto"}><source src="/background_vid.mp4" /></video>
+                <video className={" w-full h-full object-cover"} autoPlay loop muted preload={"auto"}><source src="/background_vid.webm" /></video>
             </div>
         </section>
     )

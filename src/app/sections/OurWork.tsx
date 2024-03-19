@@ -16,7 +16,7 @@ const slidesPerView = () => {
         if(width < 700) return 1.5;
         else if(width <= 1024) return 2;
         else return 3;
-    };
+    }
 }
 
 
@@ -26,7 +26,7 @@ const contents = [
         title: "Ceramic Coating",
         name: "John S.",
         img: {
-            src: "/slides/slide1.jpg",
+            src: "/slides/slide1.webm",
             alt: "audi tt",
         }
     },
@@ -35,7 +35,7 @@ const contents = [
         title: "Paint Protection",
         name: "Paul G.",
         img: {
-            src: "/slides/slide2.jpg",
+            src: "/slides/slide2.webm",
             alt: "mazda",
         }
     },
@@ -44,7 +44,7 @@ const contents = [
         title: "Paint Correction",
         name: "Alice B.",
         img: {
-            src: "/slides/slide3.jpg",
+            src: "/slides/slide3.webm",
             alt: "alpine",
         }
     },
@@ -53,7 +53,7 @@ const contents = [
         title: "Car Detailing",
         name: "Bob C.",
         img: {
-            src: "/slides/slide4.jpg",
+            src: "/slides/slide4.webm",
             alt: "range rover",
         }
     },
@@ -62,7 +62,7 @@ const contents = [
         title: "Waxing & Polishing",
         name: "Charlie D.",
         img: {
-            src: "/slides/slide5.jpg",
+            src: "/slides/slide5.webm",
             alt: "porshe",
         }
     }
