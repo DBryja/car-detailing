@@ -103,6 +103,9 @@
         color: #010609;
     }
 }
+html{
+    scroll-behavior:smooth;
+}
 .swiper{
     position: relative;
     overflow: hidden;
