@@ -1,4 +1,5 @@
-
+import {isInSight} from "@/utils";
+import Video from "@/app/components/Video";
 const paragraphs = [
     {
         title: "EXCEPTUR SINT",
@@ -29,7 +30,7 @@ export default function AboutUs() {
             </div>
             <div className={"absolute inset-x-0 -inset-y-5 w-full pointer-events-none "}>
                 <div className={"absolute left-0 top-0 w-full h-full bg-black bg-opacity-80 backdrop-blur-sm"}/>
-                <video className={" w-full h-full object-cover"} autoPlay loop muted preload={"auto"}><source src="/background_vid.webm" /></video>
+                <Video src={"/background_vid.webm" }   />
             </div>
         </section>
     )

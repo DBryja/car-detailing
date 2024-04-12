@@ -1,4 +1,5 @@
 import localFont from "next/font/local";
+import React from "react";
 
 export const isMobile = (width: number) =>{
     return width <= 500;
@@ -27,3 +28,13 @@ export function debounce<F extends (...args: any[]) => any>(func: F, wait: numbe
         timeout = setTimeout(later, wait);
     };
 };
+
+export function isInSight(element: HTMLElement){
+    const rect = element.getBoundingClientRect();
+
+    let inSightVertically = (rect.bottom > 0 && rect.top < (window.innerHeight || document.documentElement.clientHeight));
+    let inSightHorizontally = (rect.right > 0 && rect.left < (window.innerWidth || document.documentElement.clientWidth));
+
+    console.log(rect.bottom, rect.top);
+    return inSightVertically && inSightHorizontally;
+}
