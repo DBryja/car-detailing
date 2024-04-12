@@ -120,6 +120,10 @@ html{
     z-index: 49;
 }
 
+html{
+    scroll-behavior:smooth;
+}
+
 h1 {
     @apply font-heading font-black text-3xl md:text-6xl xl:text-8xl;
 }
