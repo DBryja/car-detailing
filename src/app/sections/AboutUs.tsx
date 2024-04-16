@@ -22,8 +22,8 @@ export default function AboutUs() {
                 <div className={"flex flex-col gap-y-8 lg:gap-y-16"}>
                     {paragraphs.map((paragraph, index) => (
                             <div key={index} className={"px-6 border-l-2 border-beige max-w-[700px] md:border-l-4 lg:pl-16 lg:max-w-[1000px]"}>
-                                <AnimatedText text={paragraph.title} el={"h2"} className={"md:mb-4 lg:mb-8"} once={false}/>
-                                <AnimatedText text={paragraph.content} el={"p"} className={"font-light md:text-2xl lg:text-3xl"} once={false}/>
+                                <AnimatedText text={paragraph.title} el={"h2"} className={"md:mb-4 lg:mb-8"} once/>
+                                <AnimatedText text={paragraph.content} el={"p"} className={"font-light md:text-2xl lg:text-3xl"} once/>
                             </div>
                     ))}
                 </div>
