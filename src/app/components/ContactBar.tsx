@@ -1,7 +1,12 @@
 import {FiMapPin, FiPhone, } from "react-icons/fi";
 import {FaRegEnvelope, FaRegClock} from "react-icons/fa6";
 
-export const items = [
+interface Item {
+    icon: React.ReactElement;
+    text: string;
+}
+
+export const items : Item[] = [
     {
         icon: <FiMapPin/>,
         text: "196 Charlotte, Nc 92143"
@@ -19,6 +24,7 @@ export const items = [
         text: "Open: Mon-Fri 8am-5pm",
     }
 ]
+export type {Item};
 
 export default function ContactBar(){
     return (

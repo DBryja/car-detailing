@@ -1,5 +1,5 @@
-import {isInSight} from "@/utils";
 import Video from "@/app/components/Video";
+import AnimatedText from "@/app/components/animationWrappers/AnimatedText";
 const paragraphs = [
     {
         title: "EXCEPTUR SINT",
@@ -18,12 +18,12 @@ export default function AboutUs() {
         " after:block after:absolute after:w-full after:bottom-0 after:inset-x-0 after:h-[15vh] after:bg-gradient-to-t after:from-black after:to-transparent " +
         " md:min-h-[700px] md:flex md:flex-col md:justify-center"}>
             <div className={"relative z-10 mt-12 w-full h-full flex flex-col px-6 md:px-12 lg:max-w-screen-xl xl:px-0 pb-12 lg:mx-auto"}>
-                <h1 className={"uppercase mb-8 md:text-7xl md:mb-24 lg:text-8xl"}>About Us</h1>
+                <AnimatedText text={"About Us"} el={"h1"} once className={"uppercase mb-8 md:text-7xl md:mb-24 lg:text-8xl"}/>
                 <div className={"flex flex-col gap-y-8 lg:gap-y-16"}>
                     {paragraphs.map((paragraph, index) => (
                             <div key={index} className={"px-6 border-l-2 border-beige max-w-[700px] md:border-l-4 lg:pl-16 lg:max-w-[1000px]"}>
-                                <h2 className={"md:mb-4 lg:mb-8"}>{paragraph.title}</h2>
-                                <p className={"font-light md:text-2xl lg:text-3xl"}>{paragraph.content}</p>
+                                <AnimatedText text={paragraph.title} el={"h2"} className={"md:mb-4 lg:mb-8"} once={false}/>
+                                <AnimatedText text={paragraph.content} el={"p"} className={"font-light md:text-2xl lg:text-3xl"} once={false}/>
                             </div>
                     ))}
                 </div>

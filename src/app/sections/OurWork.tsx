@@ -1,5 +1,5 @@
 "use client";
-import React, {useState} from "react";
+import React, { useState} from "react";
 import {Swiper, SwiperSlide} from "swiper/react";
 import type {Swiper as SwiperType} from "swiper";
 import {EffectCoverflow, Pagination} from "swiper/modules";
@@ -8,6 +8,19 @@ import {debounce} from "@/utils"
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
+import {motion} from "framer-motion";
+import AnimatedText from "@/app/components/animationWrappers/AnimatedText";
+
+const defaultAnimations = {
+    hidden: {
+        opacity: 0,
+        x: "-10%",
+    },
+    visible: {
+        opacity: 2,
+        x: "0%",
+    }
+}
 
 
 const slidesPerView = () => {
@@ -70,22 +83,29 @@ const contents = [
 
 export default function OurWork(){
     const [currentSlide, setCurrentSlide] = useState(0);
+
     return (
     <section id={"our-work"} className={"w-full bg-black flex flex-col  items-center justify-between max-w-screen-xl lg:mx-auto"}>
         <div className={"flex flex-col w-full px-6 min-h-52 md:min-h-60 lg:flex-row"}>
             <div className={"lg:flex-shrink-0 lg:pr-24"}>
-                <h1>OUR WORK</h1>
-                <h4 className={"text-right font-heading font-light leading-tight md:text-3xl lg:text-left"}>{contents[currentSlide].title}</h4>
-                <h4 className={"text-right font-heading font-bold leading-tight md:text-3xl lg:text-left"}>for {contents[currentSlide].name}</h4>
+                <AnimatedText text={"OUR WORK"} el={"h1"} once/>
+                <motion.span aria-hidden
+                             initial={"hidden"}
+                             animate={"visible"}
+                             variants={defaultAnimations}
+                             className={"block"}
+                             key={currentSlide}
+                            >
+                    <h4 className={"text-right font-heading font-light leading-tight md:text-3xl lg:text-left"}>{contents[currentSlide].title}</h4>
+                    <h4 className={"text-right font-heading font-bold leading-tight md:text-3xl lg:text-left"}>for {contents[currentSlide].name}</h4>
+                </motion.span>
             </div>
-            <p className={"text-sm md:text-lg md:pr-28 lg:pr-0 "}>
-                “{contents[currentSlide].desc}”
-            </p>
+            <AnimatedText text={`“${contents[currentSlide].desc}”`} key={currentSlide} el={"p"} once className={"text-sm md:text-lg md:pr-28 lg:pr-0 "}/>
         </div>
         <Swiper
             effect={"coverflow"}
             grabCursor={true}
-            onSlideChange={debounce((swiper: SwiperType)=>setCurrentSlide(swiper.realIndex), 100)}
+            onSlideChange={debounce((swiper: SwiperType) => setCurrentSlide(swiper.realIndex), 100)}
             centeredSlides={true}
             slidesPerView={slidesPerView()}
             coverflowEffect={{
