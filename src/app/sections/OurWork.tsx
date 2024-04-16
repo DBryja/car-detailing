@@ -117,10 +117,19 @@ export default function OurWork(){
             loop={true}
             pagination={{clickable: true}}
             modules={[EffectCoverflow, Pagination]}
-            className={"w-full self-end max-w-screen-xl  h-[50vh] overflow-hidden" + " after:right-0 after:bg-gradient-to-l after:from-black after:to-transparent " + " before:left-0 before:bg-gradient-to-r before:from-black before:to-transparent "}
+            className={"w-full self-end max-w-screen-xl  h-[50vh] overflow-hidden " + " after:right-0 after:bg-gradient-to-l after:from-black after:to-transparent " + " before:left-0 before:bg-gradient-to-r before:from-black before:to-transparent "}
+            style={{
+            //@ts-ignore
+                "--swiper-pagination-color": "#FF6D1F",
+                "--swiper-pagination-bullet-inactive-color": "#FF6D1F",
+                "--swiper-pagination-bullet-inactive-opacity": "0.3",
+                "--swiper-pagination-bullet-size": "1rem",
+                "--swiper-pagination-bullet-horizontal-gap": "8px",
+                "--swiper-pagination-bullet-border-radius": "4px",
+            }}
         >
             {contents.map((content, i) => (
-                <SwiperSlide key={i} className={"flex items-center justify-center"}>
+                <SwiperSlide key={i} className={"flex items-center justify-center"} onClick={(e)=>console.log(e.currentTarget.dataset.swiperSlideIndex, e.currentTarget)}>
                     <Image src={content.img.src} alt={content.img.alt} className={"rounded-[25px] object-cover"} fill sizes={"(max-width: 500px) 350px, (max-width: 1000px) 400px, 600px"}/>
                 </SwiperSlide>
             ))}
